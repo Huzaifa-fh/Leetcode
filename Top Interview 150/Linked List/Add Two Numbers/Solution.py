@@ -6,14 +6,10 @@
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
 
-        sum_ = l1.val + l2.val
-        remainder = sum_ % 10
-        carry = sum_ // 10
-        head = ListNode(remainder)
-
+        head = ListNode()
         prev_node = head
-        l1 = l1.next
-        l2 = l2.next
+
+        carry = 0
 
         while l1 and l2:
             sum_ = l1.val + l2.val + carry
@@ -45,4 +41,4 @@ class Solution:
             new_node = ListNode(carry)
             prev_node.next = new_node
 
-        return head
+        return head.next
